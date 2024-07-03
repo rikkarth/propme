@@ -33,6 +33,10 @@ public class MyConfigConstants {
 }
 
 ```
+
+# Download
+[propme-0.0.1.jar](https://github.com/rikkarth/propme/releases/download/0.0.1/propme-0.0.1.jar)
+
 # Installation
 To run **PropMe** you just need to have minimum Java 8 installed, download `propme.jar` and run it as instructed bellow.
 
