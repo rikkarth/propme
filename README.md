@@ -35,7 +35,7 @@ public class MyConfigConstants {
 ```
 
 # Download
-[propme-0.0.1.jar](https://github.com/rikkarth/propme/releases/download/0.0.1/propme-0.0.1.jar)
+[propme.jar](https://github.com/rikkarth/propme/releases/latest/download/propme.jar)
 
 # Installation
 To run **PropMe** you just need to have minimum Java 8 installed, download `propme.jar` and run it as instructed bellow.
@@ -43,7 +43,7 @@ To run **PropMe** you just need to have minimum Java 8 installed, download `prop
 # How to run
 
 ```bash
-java -jar propme-0.0.1.jar path/to/source/config.properties path/to/target/folder/
+java -jar propme.jar path/to/source/config.properties path/to/target/folder/
 ```
 
 # Additional Information
