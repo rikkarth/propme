@@ -1,8 +1,8 @@
 # Introduction
 
-**PropMe** is a small application which will automatically generate a `.java` file and map it with all the fields from your `.properties` configuration file.
+**PropMe** is a lightweight application designed to automate the generation of `.java` files, mapping them to all fields from your `.properties` configuration file.
 
-This application was born from a real world requirement, where during the implementation of a large configuration, it was required to map all the fields of a configuration file to a constants java class for further validation.
+This application emerged from a real-world scenario where a comprehensive configuration setup required mapping all fields from a configuration file to a constants Java class for subsequent validation.
 
 ## Source
 
