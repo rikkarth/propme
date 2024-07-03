@@ -22,20 +22,42 @@ public class ConstantGenerator {
     public void init() {
         final Configuration config = getConfiguration();
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("public class MyConfigConstants {\n");
-        
-        config.getKeys().forEachRemaining(
-                key -> sb.append(String.format("    static final String %s = \"%s\";%n", key.toUpperCase(), key)));
-        sb.append("}");
+        final StringBuilder sourceCode = getSourceCode(config);
 
+        writeSourceCodeToFile(sourceCode);
+    }
+
+    private StringBuilder getSourceCode(final Configuration config) {
+        final StringBuilder sourceCode = new StringBuilder();
+        
+        sourceCode.append("public class MyConfigConstants {\n");
+
+        config.getKeys().forEachRemaining(key -> sourceCode.append(getLine(key)));
+
+        sourceCode.append("}");
+        return sourceCode;
+    }
+
+    private void writeSourceCodeToFile(final StringBuilder sb) {
+        //implement target paths
         try (BufferedWriter bw = Files.newBufferedWriter(Paths.get("src/test/resources/output/MyConfigConstants.java"),
                 StandardCharsets.UTF_8, StandardOpenOption.CREATE)) {
 
             bw.write(sb.toString());
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private String getLine(final String key) {
+        final String variable = formatVariable(key);
+
+        return String.format("    static final String %s = \"%s\";%n", variable, key);
+    }
+
+    private String formatVariable(final String key) {
+        //TODO implement formatting
+        return key.toUpperCase();
     }
 
     private Configuration getConfiguration() {
